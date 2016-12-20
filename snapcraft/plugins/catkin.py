@@ -106,11 +106,11 @@ class CatkinPlugin(snapcraft.BasePlugin):
     @property
     def PLUGIN_STAGE_SOURCES(self):
         return """
-deb http://packages.ros.org/ros/${{suffix}}/ {0} main
-deb http://${{prefix}}.ubuntu.com/${{suffix}}/ {0} main universe
-deb http://${{prefix}}.ubuntu.com/${{suffix}}/ {0}-updates main universe
-deb http://${{prefix}}.ubuntu.com/${{suffix}}/ {0}-security main universe
-deb http://${{security}}.ubuntu.com/${{suffix}} {0}-security main universe
+deb http://packages.ros.org/ros/ubuntu/ {0} main
+deb http://ports.ubuntu.com/ubuntu-ports/ {0} main universe
+deb http://ports.ubuntu.com/ubuntu-ports/ {0}-updates main universe
+deb http://ports.ubuntu.com/ubuntu-ports/ {0}-security main universe
+deb http://ports.ubuntu.com/ubuntu-ports {0}-security main universe
 """.format(_ROS_RELEASE_MAP[self.options.rosdistro])
 
     def __init__(self, name, options, project):
