@@ -30,7 +30,7 @@ Additionally, this plugin uses the following plugin-specific keywords:
       The source space containing Catkin packages. By default this is 'src'.
     - rosdistro:
       (string)
-      The ROS distro required by this system. Defaults to 'indigo'.
+      The ROS distro required by this system. Defaults to 'kinetic'.
     - include-roscore:
       (boolean)
       Whether or not to include roscore with the part. Defaults to true.
@@ -55,8 +55,8 @@ logger = logging.getLogger(__name__)
 
 # Map ROS releases to Ubuntu releases
 _ROS_RELEASE_MAP = {
-    'indigo': 'trusty',
-    'jade': 'trusty',
+    'kinetic': 'trusty',
+    'kinetic': 'trusty',
     'kinetic': 'xenial'
 }
 
@@ -68,7 +68,7 @@ class CatkinPlugin(snapcraft.BasePlugin):
         schema = super().schema()
         schema['properties']['rosdistro'] = {
             'type': 'string',
-            'default': 'indigo'
+            'default': 'kinetic'
         }
         schema['properties']['catkin-packages'] = {
             'type': 'array',
